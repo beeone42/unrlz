@@ -41,9 +41,9 @@ def check_sfv(sfv, fs):
     return True
 
 def unrar(sfv, fs):
-    print "unrar " + sfv
     for f in fs:
         if (f.endswith('.rar')):
+            print "unrar " + f
             rar = rarfile.RarFile(f)
             todo = set()
             for x in rar.namelist():
