@@ -32,9 +32,11 @@ def get_files_from_sfv(sfv):
 def check_sfv(sfv, fs):
     print "check " + sfv
     if (len(fs) == 0):
+        print "!!! SFV is empty"
         return False
     for f in fs:
         if (not os.path.exists(f)):
+            print "!!! file missing: " + f
             return False
     return True
 
@@ -70,10 +72,12 @@ def process_path(p):
     os.chdir(p)
     for f in glob.glob("*/*.sfv"):
         os.chdir(f.split('/')[0])
+        rep = f.split('/')[0]
         sfv = f.split('/')[1]
         fs = get_files_from_sfv(sfv)
-        print "--- " + sfv
-        if False:
+        print ""
+        print "--- " + rep
+        if True:
             if (check_sfv(sfv, fs)):
                 if unrar(sfv, fs):
                     delete_files(sfv, fs)
