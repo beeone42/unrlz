@@ -15,12 +15,12 @@ tar xvfz unrarsrc-5.4.5.tar.gz
 cd unrar
 make -f makefile lib
 sudo make install-lib
-ldconfig
+sudo ldconfig
 ```
 
 ## install python unrar (https://pypi.python.org/pypi/unrar/):
 
 ```
-apt-get install python-pip
+sudo apt-get install python-pip
 pip install unrar
 ```
